@@ -1,0 +1,9 @@
+- name: System setup
+  hosts: workstation
+  become: true
+  roles:
+    - role: repositories
+    - role: nvidia
+      tags: nvidia
+    - role: common
+      tags: common

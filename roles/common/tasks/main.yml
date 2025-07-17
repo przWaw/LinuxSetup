@@ -1,0 +1,55 @@
+- name: Add brave browser
+  block:
+    - name: Add rpm key brave
+      rpm_key:
+        key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+    - name: Add brave repository
+      yum_repository:
+        name: brave-browser
+        description: Brave Browser Repository
+        baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+        enabled: yes
+        gpgcheck: yes
+        gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+    
+    - name: Install brave
+      dnf:
+        name: brave-browser
+        state: present
+
+- name: Add VSCode 
+  block:
+    - name: Add rpm key for VSCode 
+      rpm_key: 
+        key: https://packages.microsoft.com/keys/microsoft.asc
+    
+    - name: Add VSCode repository
+      yum_repository:
+        name: code
+        description: Visual Studio Code Repository 
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        enabled: yes
+        gpgcheck: yes
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+ 
+    - name: Install VSCode
+      dnf:
+        name: code
+        state: present
+
+- name: Add Obsidian
+  flatpak:
+    name: md.obsidian.Obsidian
+    state: present
+        
+- name: Add Discord
+  dnf:
+    name: discord
+    state: present
+
+- name: Add spotify
+  flatpak:
+    name: com.spotify.Client
+    state: present

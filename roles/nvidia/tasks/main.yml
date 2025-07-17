@@ -1,0 +1,18 @@
+- name: Install dependencies for nvidia akmod
+  dnf:
+    name:
+      - gcc
+      - make
+      - kernel-devel
+      - kernel-headers
+    state: present
+
+- name: Install nvidia auto kernel module
+  dnf:
+    name: akmod-nvidia
+    state: present
+
+- name: Install nvidia cuda support
+  dnf: 
+    name: xorg-x11-drv-nvidia-cuda
+    state: present
