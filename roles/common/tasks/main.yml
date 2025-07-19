@@ -53,3 +53,8 @@
   flatpak:
     name: com.spotify.Client
     state: present
+
+- name: Add Bitwarden
+  flatpak:
+    name: com.bitwarden.desktop
+    state: present
