@@ -19,6 +19,11 @@
         name: brave-browser
         state: present
 
+- name: Add Thunderbird
+  dnf:
+    name: thunderbird
+    state: present
+
 - name: Add VSCode 
   block:
     - name: Add rpm key for VSCode 
