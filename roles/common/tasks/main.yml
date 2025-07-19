@@ -63,3 +63,10 @@
   flatpak:
     name: com.bitwarden.desktop
     state: present
+
+- name: Add top alternative
+  dnf:
+    name:
+      - btop
+      - htop
+    state: present
