@@ -1,0 +1,27 @@
+- name: Install gaming platforms
+  block:
+    - name: Install steam and lutris
+      dnf:  
+        name:
+          - steam
+          - lutris
+        state: present
+    - name: Install heroic
+      flatpak:
+        name: com.heroicgameslauncher.hgl
+        state: present
+        
+
+- name: Install additional software
+  block:
+    - name: Install game optimisation and monitoring tools
+      dnf: 
+        name:
+          - gamescope
+          - mangohud
+          - gamemode
+    - name: Install wine and proton management tools
+      flatpak:
+        name: net.davidotek.pupgui2 
+
+    

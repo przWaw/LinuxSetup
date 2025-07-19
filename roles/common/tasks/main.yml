@@ -49,7 +49,7 @@
     name: discord
     state: present
 
-- name: Add spotify
+- name: Add Spotify
   flatpak:
     name: com.spotify.Client
     state: present
