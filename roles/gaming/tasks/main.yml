@@ -4,7 +4,6 @@
       dnf:  
         name:
           - steam
-          - lutris
         state: present
     - name: Install heroic
       flatpak:
@@ -23,5 +22,3 @@
     - name: Install wine and proton management tools
       flatpak:
         name: net.davidotek.pupgui2 
-
-    
