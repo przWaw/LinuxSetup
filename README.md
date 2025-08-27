@@ -17,17 +17,17 @@ An automated Fedora workstation configuration using Ansible playbooks. This repo
 Run playbook with:
 
 ```bash 
-ansible-playbook -i inventory playbook.yml --ask-become-pass
+ansible-playbook -i inventory.yml playbook.yml --ask-become-pass
 ```
 
 To install specific role use tags
 
 ```bash
-ansible-playbook -i inventory playbook.yml --ask-become-pass --tags nvidia
+ansible-playbook -i inventory.yml playbook.yml --ask-become-pass --tags nvidia
 ```
 
 To run everything except selected roles use skip tags
 
 ```bash
-ansible-playbook -i inventory playbook.yml --ask-become-pass --skip-tags nvidia
+ansible-playbook -i inventory.yml playbook.yml --ask-become-pass --skip-tags nvidia
 ```
