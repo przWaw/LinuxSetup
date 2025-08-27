@@ -1,6 +1,6 @@
 - name: Install gaming platforms
   block:
-    - name: Install steam and lutris
+    - name: Install steam and heroic
       dnf:  
         name:
           - steam

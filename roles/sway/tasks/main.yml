@@ -1,0 +1,6 @@
+- name: Install Sway and Waybar
+  dnf:
+    name:
+      - sway
+      - waybar
+    state: present
