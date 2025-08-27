@@ -4,7 +4,7 @@ An automated Fedora workstation configuration using Ansible playbooks. This repo
 
 ## Configured roles
 
-* Common - Install Brave browser, Thunderbird, code editor, Obsidian, Discord, Spotify and Bitwarden
+* Common - Install Brave browser, Thunderbird, VSCode, Obsidian, Discord, Spotify and Bitwarden
 
 * Nvidia - Install nvidia drivers
 
