@@ -24,21 +24,21 @@
     name: thunderbird
     state: present
 
-- name: Add VSCode 
+- name: Add VSCode
   block:
-    - name: Add rpm key for VSCode 
-      rpm_key: 
+    - name: Add rpm key for VSCode
+      rpm_key:
         key: https://packages.microsoft.com/keys/microsoft.asc
-    
+
     - name: Add VSCode repository
       yum_repository:
         name: code
-        description: Visual Studio Code Repository 
+        description: Visual Studio Code Repository
         baseurl: https://packages.microsoft.com/yumrepos/vscode
         enabled: yes
         gpgcheck: yes
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
- 
+
     - name: Install VSCode
       dnf:
         name: code
@@ -48,7 +48,7 @@
   flatpak:
     name: md.obsidian.Obsidian
     state: present
-        
+
 - name: Add Discord
   dnf:
     name: discord
