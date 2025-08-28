@@ -12,8 +12,7 @@
         enabled: yes
         gpgcheck: yes
         gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-
-    
+ 
     - name: Install brave
       dnf:
         name: brave-browser
@@ -69,14 +68,4 @@
     name:
       - btop
       - htop
-    state: present
-
-- name: Install pip3
-  dnf:
-    name: python3-pip
-    state: present
-
-- name: Install ansible dev tools
-  pip:
-    name: ansible-dev-tools
     state: present
