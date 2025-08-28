@@ -1,0 +1,50 @@
+- name: Get latest JetBrains Toolbox release info
+  ansible.builtin.uri:
+    url: https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release
+    return_content: yes
+  register: toolbox_api
+
+- name: Set download URL
+  ansible.builtin.set_fact:
+    toolbox_url: "{{ toolbox_api.json.TBA[0].downloads.linux.link }}"
+
+- name: Create install dir
+  ansible.builtin.file:
+    path: "{{ toolbox_install_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Download and extract Toolbox
+  ansible.builtin.unarchive:
+    src: "{{ toolbox_url }}"
+    dest: "{{ toolbox_install_dir }}"
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+
+- name: Create symlink in /usr/local/bin
+  ansible.builtin.file:
+    src: "{{ toolbox_bin }}"
+    dest: "{{ symlink_path }}"
+    state: link
+    force: yes
+    follow: false
+
+- name: Download JetBrains Toolbox icon
+  ansible.builtin.get_url:
+    url: "{{ toolbox_icon_url }}"
+    dest: "{{ toolbox_icon_path }}"
+    mode: '0644'
+
+- name: Install desktop entry
+  ansible.builtin.copy:
+    dest: /usr/share/applications/jetbrains-toolbox.desktop
+    content: |
+      [Desktop Entry]
+      Version=1.0
+      Type=Application
+      Name=JetBrains Toolbox
+      Exec={{ toolbox_bin }}
+      Icon={{ toolbox_icon_path }}
+      Comment=Manage JetBrains IDEs
+      Categories=Development;IDE;
+      Terminal=false

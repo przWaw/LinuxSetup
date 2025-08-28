@@ -1,0 +1,5 @@
+toolbox_install_dir: /opt/jetbrains-toolbox
+toolbox_bin: /opt/jetbrains-toolbox/bin/jetbrains-toolbox
+symlink_path: /usr/local/bin/jetbrains-toolbox
+toolbox_icon_url: https://resources.jetbrains.com/storage/products/company/brand/logos/Toolbox_icon.png
+toolbox_icon_path: /usr/share/pixmaps/jetbrains-toolbox.png

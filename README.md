@@ -4,13 +4,15 @@ An automated Fedora workstation configuration using Ansible playbooks. This repo
 
 ## Configured roles
 
-* Common - Install Brave browser, Thunderbird, VSCode, Obsidian, Discord, Spotify and Bitwarden
+* common - Install Brave browser, Thunderbird, VSCode, Obsidian, Discord, Spotify and Bitwarden
 
-* Nvidia - Install nvidia drivers
+* nvidia - Install nvidia drivers
 
-* Gaming - Install Steam, Heroic Games launcher and helper software
+* gaming - Install Steam, Heroic Games launcher and helper software
 
-* Sway - Install and configure Sway DE
+* sway - Install and configure Sway DE
+
+* jetbrains - Install JetBrains Toolbox
 
 ## Usage
 

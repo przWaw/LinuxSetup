@@ -1,6 +1,6 @@
 - name: Install gaming platforms
   block:
-    - name: Install steam and heroic
+    - name: Install steam
       dnf:  
         name:
           - steam
