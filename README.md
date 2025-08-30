@@ -14,6 +14,8 @@ An automated Fedora workstation configuration using Ansible playbooks. This repo
 
 * jetbrains - Install JetBrains Toolbox
 
+* unity - Install Unity Hub
+
 ## Usage
 
 Run playbook with:
