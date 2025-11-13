@@ -1,6 +1,0 @@
-home_directory: HOME_DIRECTORY
-toolbox_install_dir: "{{ home_directory }}/.local/jetbrains-toolbox"
-toolbox_bin: "{{ toolbox_install_dir }}/bin/jetbrains-toolbox"
-symlink_path: /usr/local/bin/jetbrains-toolbox
-toolbox_icon_url: https://www.iconarchive.com/download/i105820/papirus-team/papirus-apps/jetbrains-toolbox.512.png
-toolbox_icon_path: "{{ toolbox_install_dir }}/icon.png" 
