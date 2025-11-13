@@ -37,7 +37,7 @@
 
 - name: Install desktop entry
   ansible.builtin.copy:
-    dest: /usr/share/applications/jetbrains-toolbox.desktop
+    dest: "{{ home_directory }}/.local/share/applications/jetbrains-toolbox.desktop"
     content: |
       [Desktop Entry]
       Version=1.0
